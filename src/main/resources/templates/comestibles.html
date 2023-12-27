@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <h1><a th:href="@{/electronico}">Electronicos</a></h1>
+    <h2><a th:href="@{/ropa}">Ropa</a> </h2>
+</nav>
+<div class="container">
+    <h1 th:text="'Comestible'"></h1>
+    <section id="cards-container">
+        <div class="card" th:each="comida : ${comidas}">
+            <div class="img-card">
+                <img th:src="${comida.img}" src="" alt="proximamente">
+            </div>
+            <div class="add-cart">Add to Cart</div>
+            <div class="info-card">
+                <p><strong th:text="${comida.nombre}"></strong></p>
+                <p th:text="'Price : ' + ${comida.precioBase} + '   ID: ' + ${comida.id}"></p>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>
